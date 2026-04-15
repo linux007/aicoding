@@ -1,0 +1,17 @@
+{
+  "eval_id": 2,
+  "eval_name": "bug-fix-scenario",
+  "grading_results": [
+    {
+      "assertion": "correct_flow_selected",
+      "passed": true,
+      "evidence": "输出明确声明 '检测到 Bug 修复场景，使用 Flow B'"
+    },
+    {
+      "assertion": "debugging_approach_mentioned",
+      "passed": true,
+      "evidence": "输出中提到 'systematic-debugging' 和完整的 4 Phase 调试流程，包含假设验证"
+    }
+  ],
+  "overall_passed": true
+}

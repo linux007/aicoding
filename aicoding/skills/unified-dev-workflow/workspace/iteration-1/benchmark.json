@@ -1,0 +1,99 @@
+{
+  "skill_name": "unified-dev-workflow",
+  "iteration": 1,
+  "timestamp": "2026-04-15T19:00:00Z",
+  "summary": {
+    "total_evals": 4,
+    "with_skill": {
+      "passed": 4,
+      "pass_rate": "100%"
+    },
+    "without_skill": {
+      "passed": 0,
+      "pass_rate": "0%",
+      "note": "基线测试没有遵循任何工作流程，直接给出实现方案"
+    }
+  },
+  "evaluations": [
+    {
+      "eval_id": 1,
+      "eval_name": "new-feature-development",
+      "with_skill": {
+        "passed": true,
+        "flow_selected": "Flow A",
+        "key_outputs": [
+          "检测到新功能开发场景",
+          "提到 /opsx:propose 命令",
+          "4 Phase 流程完整",
+          "检查清单明确"
+        ]
+      },
+      "without_skill": {
+        "passed": false,
+        "issue": "直接给出技术实现方案，没有结构化流程"
+      }
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "bug-fix-scenario",
+      "with_skill": {
+        "passed": true,
+        "flow_selected": "Flow B",
+        "key_outputs": [
+          "检测到 Bug 修复场景",
+          "提到 systematic-debugging",
+          "假设验证流程完整",
+          "根因分析模板"
+        ]
+      },
+      "without_skill": null
+    },
+    {
+      "eval_id": 3,
+      "eval_name": "small-change-scenario",
+      "with_skill": {
+        "passed": true,
+        "flow_selected": "Flow C",
+        "key_outputs": [
+          "检测到小需求修改场景",
+          "正确跳过 OpenSpec",
+          "正确判断无需测试",
+          "简化流程执行"
+        ]
+      },
+      "without_skill": null
+    },
+    {
+      "eval_id": 4,
+      "eval_name": "refactor-scenario",
+      "with_skill": {
+        "passed": true,
+        "flow_selected": "Flow D",
+        "key_outputs": [
+          "检测到代码重构场景",
+          "提到 /opsx:explore",
+          "强调测试网构建",
+          "分步重构流程"
+        ]
+      },
+      "without_skill": {
+        "passed": false,
+        "issue": "直接分析代码并给出重构方案，没有遵循重构流程"
+      }
+    }
+  ],
+  "conclusions": {
+    "skill_effectiveness": "Skill 有效帮助模型识别开发场景并选择正确的工作流程",
+    "key_improvements": [
+      "结构化流程替代即兴实现",
+      "检查清单确保关键步骤不遗漏",
+      "工具命令明确（OpenSpec/Superpowers）",
+      "场景判断准确（4/4 正确）"
+    ],
+    "recommendations": [
+      "Skill 已验证有效，可以投入使用",
+      "后续可添加更多边缘场景测试",
+      "可考虑添加触发条件的优化"
+    ]
+  }
+}

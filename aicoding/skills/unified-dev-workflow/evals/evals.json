@@ -1,0 +1,33 @@
+{
+  "skill_name": "unified-dev-workflow",
+  "evals": [
+    {
+      "id": 1,
+      "name": "new-feature-development",
+      "prompt": "帮我实现用户登录功能，需要支持手机号和邮箱两种方式登录",
+      "expected_output": "检测到新功能开发场景，使用 Flow A。执行 /opsx:propose 创建提案。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "bug-fix-scenario",
+      "prompt": "用户登录时偶尔会出现 500 错误，日志显示 Redis 连接超时，帮我排查并修复",
+      "expected_output": "检测到 Bug 修复场景，使用 Flow B。先执行 systematic-debugging 定位问题。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "small-change-scenario",
+      "prompt": "把登录按钮的颜色改成蓝色，顺便把文案改成'登录系统'",
+      "expected_output": "检测到小需求修改场景，使用 Flow C。跳过 OpenSpec，直接实现。",
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "refactor-scenario",
+      "prompt": "重构用户模块，把 UserService 拆分成多个小服务，但保持对外接口不变",
+      "expected_output": "检测到代码重构场景，使用 Flow D。先执行 /opsx:explore 分析现状。",
+      "files": []
+    }
+  ]
+}

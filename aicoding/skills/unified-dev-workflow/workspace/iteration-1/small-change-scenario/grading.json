@@ -1,0 +1,17 @@
+{
+  "eval_id": 3,
+  "eval_name": "small-change-scenario",
+  "grading_results": [
+    {
+      "assertion": "correct_flow_selected",
+      "passed": true,
+      "evidence": "输出明确声明 '场景类型: 小需求修改 (Flow C)'"
+    },
+    {
+      "assertion": "skip_openspec_mentioned",
+      "passed": true,
+      "evidence": "输出中明确说明 '跳过的流程: OpenSpec, Superpowers TDD' 并解释原因"
+    }
+  ],
+  "overall_passed": true
+}

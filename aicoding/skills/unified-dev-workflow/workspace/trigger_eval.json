@@ -1,0 +1,23 @@
+[
+  {"query": "帮我实现用户登录功能", "should_trigger": true},
+  {"query": "用户登录时报500错误，帮我修一下", "should_trigger": true},
+  {"query": "把这个按钮颜色改成蓝色", "should_trigger": true},
+  {"query": "重构一下UserService，拆成多个服务", "should_trigger": true},
+  {"query": "把老项目的支付模块迁移到新项目", "should_trigger": true},
+  {"query": "我想加个新功能，支持用户头像上传", "should_trigger": true},
+  {"query": "这个接口有时候会超时，帮我排查", "should_trigger": true},
+  {"query": "怎么做这个需求？需要先规划一下", "should_trigger": true},
+  {"query": "开发一个导出Excel的功能", "should_trigger": true},
+  {"query": "把日志级别从debug改成info", "should_trigger": true},
+
+  {"query": "读一下这个文件的内容", "should_trigger": false},
+  {"query": "解释一下这段代码是什么意思", "should_trigger": false},
+  {"query": "这个函数怎么用？", "should_trigger": false},
+  {"query": "帮我写一个正则表达式", "should_trigger": false},
+  {"query": "git commit一下", "should_trigger": false},
+  {"query": "运行测试", "should_trigger": false},
+  {"query": "这个项目的目录结构是什么？", "should_trigger": false},
+  {"query": "帮我翻译这段英文", "should_trigger": false},
+  {"query": "搜索一下Redis相关的代码", "should_trigger": false},
+  {"query": "创建一个新分支", "should_trigger": false}
+]

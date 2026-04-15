@@ -1,0 +1,16 @@
+{
+  "eval_id": 3,
+  "eval_name": "small-change-scenario",
+  "prompt": "把登录按钮的颜色改成蓝色，顺便把文案改成'登录系统'",
+  "expected_behavior": "检测到小需求修改场景，使用 Flow C，跳过 OpenSpec 直接实现",
+  "assertions": [
+    {
+      "name": "correct_flow_selected",
+      "description": "正确识别为小需求修改场景，选择 Flow C"
+    },
+    {
+      "name": "skip_openspec_mentioned",
+      "description": "提到跳过 OpenSpec 或简化流程"
+    }
+  ]
+}

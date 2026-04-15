@@ -1,0 +1,16 @@
+{
+  "eval_id": 2,
+  "eval_name": "bug-fix-scenario",
+  "prompt": "用户登录时偶尔会出现 500 错误，日志显示 Redis 连接超时，帮我排查并修复",
+  "expected_behavior": "检测到 Bug 修复场景，使用 Flow B，先执行 systematic-debugging 定位问题",
+  "assertions": [
+    {
+      "name": "correct_flow_selected",
+      "description": "正确识别为 Bug 修复场景，选择 Flow B"
+    },
+    {
+      "name": "debugging_approach_mentioned",
+      "description": "提到 systematic-debugging 或调试流程"
+    }
+  ]
+}

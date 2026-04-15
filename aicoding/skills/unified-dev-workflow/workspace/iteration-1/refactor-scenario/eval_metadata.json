@@ -1,0 +1,16 @@
+{
+  "eval_id": 4,
+  "eval_name": "refactor-scenario",
+  "prompt": "重构用户模块，把 UserService 拆分成多个小服务，但保持对外接口不变",
+  "expected_behavior": "检测到代码重构场景，使用 Flow D，先执行 /opsx:explore 分析现状",
+  "assertions": [
+    {
+      "name": "correct_flow_selected",
+      "description": "正确识别为代码重构场景，选择 Flow D"
+    },
+    {
+      "name": "explore_or_test_net_mentioned",
+      "description": "提到 /opsx:explore 或构建测试网"
+    }
+  ]
+}

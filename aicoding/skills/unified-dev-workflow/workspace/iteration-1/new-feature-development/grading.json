@@ -1,0 +1,21 @@
+{
+  "eval_id": 1,
+  "eval_name": "new-feature-development",
+  "grading_results": [
+    {
+      "assertion": "correct_flow_selected",
+      "passed": true,
+      "evidence": "输出明确声明 'Detected Scenario: 新功能开发' 和 'Selected Flow: Flow A'"
+    },
+    {
+      "assertion": "openspec_command_mentioned",
+      "passed": true,
+      "evidence": "输出中多次提到 'Execute /opsx:propose user-login' 作为 Phase 1 的下一步"
+    }
+  ],
+  "overall_passed": true,
+  "comparison": {
+    "with_skill": "遵循 Flow A 的 4 Phase 流程，使用 OpenSpec 进行需求探索，Superpowers TDD 实现",
+    "without_skill": "直接给出技术实现方案，没有使用 OpenSpec，没有结构化流程，没有检查清单"
+  }
+}

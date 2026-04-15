@@ -1,0 +1,21 @@
+{
+  "eval_id": 4,
+  "eval_name": "refactor-scenario",
+  "grading_results": [
+    {
+      "assertion": "correct_flow_selected",
+      "passed": true,
+      "evidence": "输出明确声明 'Detected Scene Type: 代码重构' 和 'Selected Flow: Flow D'"
+    },
+    {
+      "assertion": "explore_or_test_net_mentioned",
+      "passed": true,
+      "evidence": "输出中提到 'Run /opsx:explore' 和 '安全网构建'，强调测试先行"
+    }
+  ],
+  "overall_passed": true,
+  "comparison": {
+    "with_skill": "遵循 Flow D 的 4 Phase 流程，强调测试网构建、分步重构、OpenSpec 归档",
+    "without_skill": "直接分析代码并给出重构方案，没有遵循重构流程，没有强调测试先行"
+  }
+}

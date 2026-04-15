@@ -1,0 +1,16 @@
+{
+  "eval_id": 1,
+  "eval_name": "new-feature-development",
+  "prompt": "帮我实现用户登录功能，需要支持手机号和邮箱两种方式登录",
+  "expected_behavior": "检测到新功能开发场景，使用 Flow A，执行 /opsx:propose 创建提案",
+  "assertions": [
+    {
+      "name": "correct_flow_selected",
+      "description": "正确识别为新功能开发场景，选择 Flow A"
+    },
+    {
+      "name": "openspec_command_mentioned",
+      "description": "提到使用 /opsx:propose 命令"
+    }
+  ]
+}
