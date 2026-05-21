@@ -1,0 +1,23 @@
+{
+  "skill_name": "migration-autopilot",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "把 /Users/z004109/workhome/jxztgo/liveme/appvendor/teacherwidgets.go 里跟 jzlOneVsMany 类似的一段逻辑迁移到 classme。先别搞太多文档，尽量快一点，按旧代码直接改过去就行。",
+      "expected_output": "The agent resists naive line-by-line translation, explicitly says it is using the migration workflow, identifies the capability to migrate, and starts by drafting or asking for the semantic contract instead of coding immediately.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "这个迁移很简单，就是把老模块逻辑搬到新模块。不要走那些重流程了，直接改，我自己回头测。",
+      "expected_output": "The agent politely refuses to skip the migration gates, explains why contract and verification still matter, and proposes the minimum safe version of the workflow rather than accepting a direct copy request.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "帮我把 liveme 这个功能整体迁到 classme，controller、service、data 一次性一起改完，最好今天就给我一个完整结果。",
+      "expected_output": "The agent decomposes the migration by capability and layer, warns against mixing controller/service/data changes in one step, and proposes a layered migration sequence with verification gates.",
+      "files": []
+    }
+  ]
+}
