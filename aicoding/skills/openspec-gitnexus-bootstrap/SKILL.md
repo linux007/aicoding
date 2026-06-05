@@ -27,6 +27,7 @@ description: Use when the user wants to initialize a new project or repository f
 
 ```bash
 git status --short
+git rev-parse --is-inside-work-tree 2>/dev/null || echo "NOT_GIT"
 ls
 which openspec 2>/dev/null || echo "UNAVAILABLE"
 which claude 2>/dev/null || echo "UNAVAILABLE"
@@ -49,7 +50,8 @@ ls .gitnexus 2>/dev/null || echo "UNAVAILABLE"
 
 - **GitNexus**
   - GitNexus MCP/CLI 不可用 → `BLOCKED: GitNexus unavailable`（需要用户手动安装）
-  - 可用但 repo 未索引或索引陈旧 → `ACTION: npx gitnexus analyze`（可自动执行）
+  - 当前目录不是 git 仓库（`git rev-parse` 返回 `NOT_GIT`）→ 不要判为 BLOCKED；改为 `ACTION: npx gitnexus analyze --skip-git`（可自动执行）
+  - 可用且当前目录是 git 仓库，但 repo 未索引或索引陈旧 → `ACTION: npx gitnexus analyze`（可自动执行）
   - 可用且 repo context / repo list 正常 → `OK: GitNexus ready`
 
 - **Superpowers**（项目级优先，不依赖全局）
@@ -76,6 +78,7 @@ Preflight 后先汇报：
 - OpenSpec CLI: OK | BLOCKED (需手动安装)
 - OpenSpec project files: OK | MISSING (可自动 init)
 - GitNexus availability: OK | BLOCKED (需手动安装)
+- GitNexus repo mode: GIT | NON_GIT (NON_GIT 时可自动退化为 `--skip-git`)
 - GitNexus repo index: OK | MISSING | STALE (可自动 refresh)
 - Superpowers: OK | ACTION (项目级启用) | ACTION (项目级配置) | ASK (需确认)
   - 项目级 disabled 会显示 "ACTION: 尝试 claude plugin enable superpowers --scope project"
@@ -153,10 +156,16 @@ claude plugin enable superpowers@zyb-plugins --scope project 2>/dev/null
 
 ### 3. GitNexus minimal setup
 
-1. 先验证当前仓库是否可从 GitNexus 读取 context 或在 `list_repos` 中找到
+1. 先判断当前目录是否为 git 仓库：
+   - 如果 `git rev-parse --is-inside-work-tree` 返回 `NOT_GIT`，直接走非 git 模式，不要把这一步判为 BLOCKED
+   - 如果是 git 仓库，再验证当前仓库是否可从 GitNexus 读取 context 或在 `list_repos` 中找到
 2. 若缺失或陈旧，运行：
    ```bash
    npx gitnexus analyze
+   ```
+   非 git 目录则改为：
+   ```bash
+   npx gitnexus analyze --skip-git
    ```
 3. 完成后至少验证其中一个：
    - repo context 可读
@@ -181,4 +190,5 @@ repo 名不明确时，先从 `list_repos` 找到目标 repo 名。
 - 已有配置时优先补缺，不重装
 - 影响共享状态或覆盖现有内容前先确认
 - 出现 `BLOCKED` 后不要继续自动修改，明确告知用户 BLOCKED 原因和恢复方式
+- 当前目录不是 git 仓库时，不要把 GitNexus 判为 BLOCKED；优先退化到 `npx gitnexus analyze --skip-git`
 - **Superpowers 未启用优先尝试 `claude plugin enable --scope project`，失败后降级为项目级配置**
