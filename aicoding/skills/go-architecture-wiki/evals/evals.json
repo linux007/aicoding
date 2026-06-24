@@ -1,0 +1,23 @@
+{
+  "skill_name": "go-architecture-wiki",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "请读取这个单服务 Go 仓库的代码结构，生成一份系统设计 Wiki。我要给新同学做入门材料，但也希望维护者能快速看到请求入口、service/data/models/api 的分层边界，以及两个最关键的异步流程。默认请用 Markdown，并带一张 Mermaid 高层架构图。",
+      "expected_output": "Should produce a single-service architecture wiki that includes layered model, entry map, representative flows, and a Mermaid diagram instead of only package descriptions.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "请基于当前多服务 Go 仓库生成系统设计 Wiki，重点描述服务边界、模块交互契约、HTTP/MQ/command 入口地图，以及 taskId、businessId、resourceId 这类关键标识在服务之间的生命周期。优先结合 GitNexus 结果，不要只靠 grep。",
+      "expected_output": "Should produce a multi-service architecture wiki with service catalog, contract-first sections, entry maps, key ID lifecycle analysis, and explicit GitNexus-informed structure.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "我这边是个 Go 仓库，但不确定有没有知识图谱工具可用。你帮我做一个架构总览文档，要求既适用于评审变更，也适合 onboarding。请先判断这是单服务还是多服务，再决定文档结构，并把高风险边界单列出来。",
+      "expected_output": "Should classify repo shape first, adapt the document structure accordingly, and still produce architecture sections and risk boundaries even without relying on GitNexus-only features.",
+      "files": []
+    }
+  ]
+}
