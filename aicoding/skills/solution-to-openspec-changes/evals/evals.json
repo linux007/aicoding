@@ -1,0 +1,41 @@
+{
+  "skill_name": "solution-to-openspec-changes",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "根据这份数字人三期方案文档，先拆需求，再整理成一组按顺序推进的 OpenSpec changes，最后给我第一个 /opsx:propose 文案。重点要考虑兼容旧的 save -> production -> callback -> signal -> preview 链路。",
+      "expected_output": "先输出子系统拆分、共享约束、风险和联调主线，再切出一组有依赖顺序的 changes，并生成第一个前置 change 的完整 /opsx:propose 文案。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "这是个老系统增量改造：要新增资产层、改 editor save/init、复用 production 和 preview，但 Signal 顶层协议不能改。帮我按 OPSX 顺序拆成 changes，并告诉我哪个 change 应该先冻结。",
+      "expected_output": "识别这是跨系统需求，先提出共享协议冻结 change，再拆出资产层、编排层、运行链路、预览层等 changes，并给出推进顺序和前置依赖。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "我已经把需求拆成资产层、编排层、signal 层、preview 层了。下一步想把它们变成 OpenSpec changes，并且给每个 change 生成 /opsx:propose 文案。先帮我列出 change 名和 scope。",
+      "expected_output": "优先承接用户已有拆分结果，不重复发散，直接映射成命名清晰、边界明确的 changes，并给出每个 change 的 scope、non-scope 和 proposal 生成顺序。",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "这次改造涉及 question/init、question/detail、interactive-config/detail 三组接口，文档里已经给了 request/response JSON，字段命名不能变，也不能直接返回 model。帮我拆成 OpenSpec changes，并先给我第一个 /opsx:propose 文案。",
+      "expected_output": "优先识别接口协议是共享契约，建议前置 freeze-contracts change；在 proposal 文案里明确写 request/response 对齐、禁止 model 直出、示例 JSON 为验收基准。",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "这是老系统增量改造，question/init 返回的是编辑器初始化结构，不是普通 detail。帮我拆 changes，并指出哪些接口最容易被实现偏。",
+      "expected_output": "明确指出 init/detail/list/test 的语义风险，并在 change 规划或 proposal 中把它列成协议偏差风险。",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "我们这批接口最大的风险是后端为了省事直接返回数据库字段。请基于方案文档拆 change，并让 proposal 能约束实现阶段必须 DTO 化。",
+      "expected_output": "proposal 文案里出现禁止 model 直出、必须 DTO 映射、字段命名严格按协议的要求。",
+      "files": []
+    }
+  ]
+}
